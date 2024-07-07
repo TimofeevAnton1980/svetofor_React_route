@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import s from "./app.module.css";
 import { useNavigate } from "react-router";
 
-export const Green = ({green, red, yellow, green_active, setStatus = f => f}) => {
+export const Green = ({green, red, yellow, green_active}) => {
     const [miracle, setMiracle] = useState(0)
     const hist = useNavigate();
 
@@ -18,7 +18,6 @@ export const Green = ({green, red, yellow, green_active, setStatus = f => f}) =>
             setTimeout(() => {
                 clearInterval(intervalId);
                 green_active(null);
-                setStatus(1);
                 hist('/red');
             }, 3000);
         }

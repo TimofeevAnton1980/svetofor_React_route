@@ -11,16 +11,15 @@ function  App() {
   const [red, red_active] = useState(null );
   const [green, green_active] = useState(null);
   const [yellow, yellow_active] = useState(null);
-  const [status, setStatus] = useState(0);
 
   return (
       <main className={s.main}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main green = {green} green_active = {green_active} setStatus = {setStatus}/>} />
-            <Route path="/green" element={(status === 0) ? <Green green = {green} red = {red} yellow = {yellow} green_active = {green_active} setStatus = {setStatus} /> : null} />
-            <Route path="/red" element={(status === 1) ? <Red green = {green} red = {red} yellow = {yellow} red_active = {red_active} setStatus = {setStatus} /> : null} />
-            <Route path="/:id" element={(status === 2) ? <Yellow green = {green} red = {red} yellow = {yellow} yellow_active = {yellow_active} setStatus = {setStatus} /> : null} />
+            <Route path="/" element={<Main green = {green} green_active = {green_active} />} />
+            <Route path="/green" element={<Green green = {green} red = {red} yellow = {yellow} green_active = {green_active} />} />
+            <Route path="/red" element={<Red green = {green} red = {red} yellow = {yellow} red_active = {red_active} />} />
+            <Route path="/yellow" element={<Yellow green = {green} red = {red} yellow = {yellow} yellow_active = {yellow_active} />} />
           </Routes>
         </BrowserRouter>
       </main>

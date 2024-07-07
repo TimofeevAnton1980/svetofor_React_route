@@ -1,18 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import s from "./app.module.css";
 import { useNavigate , useParams } from "react-router";
 
-export const Yellow = ({green, red, yellow, yellow_active, setStatus = f => f}) => {
+export const Yellow = ({green, red, yellow, yellow_active}) => {
     const hist = useNavigate();
-    const params = useParams();
-    const current = params.id;
+    // const params = useParams();
+    // const current = params.id;
     // console.log(current);
 
     useEffect(() => {
             yellow_active({backgroundColor: 'yellow'} );
             setTimeout(() => {
                 yellow_active(null);
-                setStatus(0);
                 hist('/');
             }, 5000);
         }, []
